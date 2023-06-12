@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+  --main-color: #de8f32;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  max-width: 110vw;
+  /* background-color: aliceblue; */
+  background-image: url("../../public/backround.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+}
