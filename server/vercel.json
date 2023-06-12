@@ -7,7 +7,7 @@
   ],
   "routes": [
     {
-      "src": "/ws/chat/:roomID/",
+      "src": "/ws/chat/:room_name/",
       "dest": "core/asgi.py"
     },
     {
