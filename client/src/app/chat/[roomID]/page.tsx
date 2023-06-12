@@ -37,7 +37,7 @@ const ChatRoom = ({ params }: any) => {
 
   useEffect(() => {
     const chatSocket = new WebSocket(
-      `ws://${host}/ws/chat/${roomID}/`
+      `wss://${host}/ws/chat/${roomID}/`
     );
 
     chatSocket.onmessage = function (e) {
@@ -73,7 +73,7 @@ const ChatRoom = ({ params }: any) => {
 
   const handleSendMessage = () => {
     const chatSocket = new WebSocket(
-      `ws://${host}/ws/chat/${roomID}/`
+      `wss://${host}/ws/chat/${roomID}/`
     );
 
     chatSocket.onopen = function () {
