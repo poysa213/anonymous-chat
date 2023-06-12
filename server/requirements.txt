@@ -2,3 +2,4 @@ django
 channels-redis
 channels
 daphne
+django-cors-headers
