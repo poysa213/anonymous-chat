@@ -75,16 +75,21 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 ASGI_APPLICATION = "core.asgi.application"
 
+# we need vps hh
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels_redis.core.RedisChannelLayer",
+#         "CONFIG": {
+#             "hosts": [("127.0.0.1", 6379)],
+#         },
+#     },
+# }
 
 CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],
-        },
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
     },
 }
-
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
