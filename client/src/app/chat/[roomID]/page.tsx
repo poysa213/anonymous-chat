@@ -127,7 +127,7 @@ const ChatRoom = ({ params }: any) => {
 
 
   const handleInputKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.keyCode === 13) {
+    if (e.key == 'Enter') {
       const submitButton = document.querySelector('#chat-message-submit') as HTMLInputElement;
       if (submitButton) {
         submitButton.click();
