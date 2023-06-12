@@ -1,18 +1,18 @@
 {
-    "builds": [
-      {
-        "src": "core/asgi.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/ws/chat/:roomID/",
-        "dest": "core/asgi.py"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "core/asgi.py"
-      }
-    ]
-  }
+  "builds": [
+    {
+      "src": "core/asgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/ws/chat/:roomID/",
+      "dest": "core/asgi.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "core/asgi.py"
+    }
+  ]
+}
