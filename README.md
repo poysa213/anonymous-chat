@@ -15,7 +15,9 @@ I faced significant challenges during the deployment of the Anonymous Chat App d
 ## Setting Up the server (Backend) App
 
 1. Navigate to the `server` directory:
-	`cd server`
+	 ```
+	 cd server 
+	 ```
 
 2. Create a virtual environment (optional but recommended):
 
@@ -32,20 +34,32 @@ I faced significant challenges during the deployment of the Anonymous Chat App d
   ```
 
 4. Install the required dependencies:
-	`pip install -r requirements.txt`
+	 ```
+	 pip install -r requirements.txt
+	  ```
 6. Start the Django development server:
-`python manage.py runserver`
- or 
- `daphne core.asgi:application`
+	 ```
+	 python manage.py runserver
+	  ```
+	 or 
+	  ```
+	  daphne core.asgi:application 
+	  ```
 
 ## Setting Up the client (Frontend) App
 
 1. Navigate to the `client` directory:
-    `cd client`
+     ```
+     cd client
+      ```
 2. Install the dependencies using npm:
-	`npm install`
+	 ```
+	 npm install
+	 ```
 3. Start the development server:
-	`npm run dev`
+	 ```
+	 npm run dev
+	 ```
 4. Access the chat app at`http://localhost:3000`.
 
 
