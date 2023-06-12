@@ -102,7 +102,7 @@ const ChatRoom = ({ params }: any) => {
       reader.onloadend = () => {
         const base64Data = (reader.result as string).split(',')[1]; // Type assertion to treat reader.result as string // Extract the base64 data (remove data:image/png;base64,)
         
-        const chatSocket = new WebSocket(`ws://${host}/ws/chat/${roomID}/`);
+        const chatSocket = new WebSocket(`wss://${host}/ws/chat/${roomID}/`);
   
         chatSocket.onopen = () => {
           chatSocket.send(JSON.stringify({
