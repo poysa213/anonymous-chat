@@ -8,8 +8,7 @@
     "routes": [
       {
         "src": "/ws/chat/:roomID/",
-        "dest": "core/asgi.py",
-        "protocols": ["websocket"]
+        "dest": "core/asgi.py"
       },
       {
         "src": "/(.*)",
