@@ -1,4 +1,4 @@
-const host = '127.0.0.1:8000';
+const host = 'chat-iota-roan.vercel.app';
 
 
 export { host };
