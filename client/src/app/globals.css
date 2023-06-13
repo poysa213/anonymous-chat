@@ -19,13 +19,38 @@ html {
   overflow-x: hidden;
 }
 
+html, body {
+  width: 100%;
+  height:100%;
+}
+/* 
 body {
   position: relative;
-  max-width: 110vw;
+  max-width: 110vw; */
   /* background-color: aliceblue; */
-  background-image: url("../../public/backround.jpg");
+  /* background-image: url("../../public/backround.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: fixed; */
 
+/* } */
+
+
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }

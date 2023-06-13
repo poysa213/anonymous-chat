@@ -7,6 +7,7 @@ import { host } from '../../../../config';
 type Message = {
   type: string;
   content: string;
+  userUUID: string;
 };
 
 const ChatRoom = ({ params }: any) => {
@@ -45,13 +46,15 @@ const ChatRoom = ({ params }: any) => {
       if (data.messageType === "text") {
         const messageWithUUID = {
           type: "text",
-          content: `${data.message}`
+          content: `${data.message}`,
+          userUUID:`${data.userUUID}` 
         };
         setChatLog(prevLog => [...prevLog, messageWithUUID]);
       } else if (data.messageType === "image") {
         const messageWithImage = {
           type: "image",
-          content: `<img src="data:image/png;base64, ${data.message}" alt="Received Image" style="width: 450px; height: 405px;" />`
+          content: `<img src="data:image/png;base64, ${data.message}" alt="Received Image" style="width: 450px; height: 405px;" />`,
+          userUUID:`${data.userUUID}` 
         };
         
         setChatLog(prevLog => [...prevLog, messageWithImage]);
@@ -139,16 +142,18 @@ const ChatRoom = ({ params }: any) => {
     <div className="chat-container">
       <div className="chat-log">
       {chatLog.map((message, index) => (
-  <div key={index} className="message bg-blue-200 w-2/3 p-3 m-3">
-      <span className="user-uuid text-sm text-slate-600">{userUUID}</span>
+        <div className="chat chat-start flex flex-col p-3">
+  {/* <div key={index} className="message bg-blue-200 w-2/3 p-3 m-3"> */}
+
+      <span className="user-uuid text-sm text-slate-600">{message.userUUID}</span>
     {message.type === 'image' ? (
-      <div dangerouslySetInnerHTML={{ __html: message.content }} />
+      <div className='chat-bubble p-4' dangerouslySetInnerHTML={{ __html: message.content }} />
     ) : (
-      <>
-        <br />
-        <span className="message-text">{message.content}</span>
-      </>
+      
+        <span className="message-text chat-bubble">{message.content}</span>
+     
     )}
+     <br />
   </div>
 ))}
 
