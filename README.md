@@ -1,11 +1,10 @@
-
 # Anonymous Chat App
 
 The Anonymous Chat App is a web application that allows users to connect and chat anonymously with others. The app provides the option to create chat rooms or join existing rooms using unique room IDs.
 
-# Important Note on Deployment
+# Try it live!
 
-I faced significant challenges during the deployment of the Anonymous Chat App due to limitations with several serverless host providers. Unfortunately, these providers do not support WebSocket connections and impose strict function timeout limits. As a result, I was unable to successfully deploy the application using these providers.
+https://master--stalwart-rabanadas-58e94e.netlify.app/
 
 ## Technologies Used
 
@@ -63,8 +62,6 @@ I faced significant challenges during the deployment of the Anonymous Chat App d
 4. Access the chat app at`http://localhost:3000`.
 
 
+# Contributing
 
-
-
-
-
+Thank you for considering contributing to The Anonymous-Chat project! Feel free to contribute in any way, we welcome every contribution.
