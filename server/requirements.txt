@@ -1,5 +1,4 @@
-django
-channels-redis
+Django
 channels
 daphne
 django-cors-headers
