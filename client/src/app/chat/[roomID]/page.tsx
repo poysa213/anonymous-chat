@@ -21,7 +21,7 @@ const ChatRoom = ({ params }: any) => {
     let storedUUID = localStorage.getItem('userUUID');
     if (!storedUUID) {
       storedUUID = uuidv4();
-      localStorage.setItem('userUUID', storedUUID);
+      localStorage.setItem('userUUID', storedUUID); 
     }
     setUserUUID(storedUUID);
   }, []);
