@@ -14,9 +14,10 @@ const ChatRoom = ({ params }: any) => {
   const [userUUID, setUserUUID] = useState('');
   const roomID = params.roomID
   const inputRef = useRef<HTMLInputElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [chatLog, setChatLog] = useState<Message[]>([]);
   const [messageInput, setMessageInput] = useState('');
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<File | null>(null);
 
   useEffect(() => {
     let storedUUID = localStorage.getItem('userUUID');
@@ -74,18 +75,20 @@ const ChatRoom = ({ params }: any) => {
     setMessageInput(e.currentTarget.value);
   };
 
-  const handleSendMessage = () => {
+  const handleSendMessage = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const message = messageInput;
+    setMessageInput('')
     const chatSocket = new WebSocket(
       `wss://${host}/ws/chat/${roomID}/`
     );
 
     chatSocket.onopen = function () {
       chatSocket.send(JSON.stringify({
-        message: messageInput,
+        message: message,
         userUUID: userUUID,
         messageType: "text"
       }));
-      setMessageInput('');
     };
     if (inputRef.current) {
       inputRef.current.focus();
@@ -101,6 +104,10 @@ const ChatRoom = ({ params }: any) => {
 
   const handleUpload = () => {
     if (selectedImage) {
+      if (fileInputRef.current) {
+        fileInputRef.current.value = ''; // Reset the value to clear the selected file
+      }
+      setSelectedImage(null);
       const reader = new FileReader();
       reader.onloadend = () => {
         const base64Data = (reader.result as string).split(',')[1]; // Type assertion to treat reader.result as string // Extract the base64 data (remove data:image/png;base64,)
@@ -159,10 +166,11 @@ const ChatRoom = ({ params }: any) => {
 
 </div>
       <div className='input-container'>
-        <input type="file" onChange={handleImageChange} className="image-upload" />
+        <input type="file" onChange={handleImageChange} ref={fileInputRef} className="image-upload" />
         <button id="chat-message-submit" className="send-button" onClick={handleUpload}>Upload</button>
       </div>
-      <div className="input-container">
+      {/* <div className="input-container"> */}
+      <form onSubmit={handleSendMessage} className="input-container">
         <input
           id="chat-message-input"
           type="text"
@@ -175,16 +183,16 @@ const ChatRoom = ({ params }: any) => {
   
         <button
           id="chat-message-submit"
-          onClick={handleSendMessage}
           className="send-button"
         >
           Send
         </button>
+        </form>
 
 
 
       </div>
-    </div>
+    // </div>
   );
 };
 export default ChatRoom;
