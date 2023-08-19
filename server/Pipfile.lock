@@ -175,7 +175,11 @@
                 "sha256:ce785cf81a7bdade534297ef9e490ddff800d956625020ab2ec2780a556c313e",
                 "sha256:d0d651aa754ef58d75cec6edfbd21259d93810b73f6ec246436a21b7841908de"
             ],
+
             "markers": "python_version >= '3.7'",
+
+            "index": "pypi",
+
             "version": "==41.0.3"
         },
         "daphne": {
