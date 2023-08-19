@@ -175,7 +175,11 @@
                 "sha256:ce785cf81a7bdade534297ef9e490ddff800d956625020ab2ec2780a556c313e",
                 "sha256:d0d651aa754ef58d75cec6edfbd21259d93810b73f6ec246436a21b7841908de"
             ],
+
+            "markers": "python_version >= '3.7'",
+
             "index": "pypi",
+
             "version": "==41.0.3"
         },
         "daphne": {
@@ -187,11 +191,11 @@
         },
         "django": {
             "hashes": [
-                "sha256:2a6b6fbff5b59dd07bef10bcb019bee2ea97a30b2a656d51346596724324badf",
-                "sha256:672b3fa81e1f853bb58be1b51754108ab4ffa12a77c06db86aa8df9ed0c46fe5"
+                "sha256:45a747e1c5b3d6df1b141b1481e193b033fd1fdbda3ff52677dc81afdaacbaed",
+                "sha256:f7c7852a5ac5a3da5a8d5b35cc6168f31b605971441798dac845f17ca8028039"
             ],
             "index": "pypi",
-            "version": "==4.2.2"
+            "version": "==4.2.3"
         },
         "django-cors-headers": {
             "hashes": [
