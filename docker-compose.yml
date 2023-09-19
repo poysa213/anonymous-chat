@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  nextjs-app:
+    build:
+      context: ./client
+    ports:
+      - "3000:3000"
+    working_dir: /usr/src/app
+    command: ["npm", "start"]
+    networks:
+      - app-network
+
+  django-app:
+    build:
+      context: ./server
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+    working_dir: /app
+    command: ["run.sh"]
+    networks:
+      - app-network
+
+
+
+networks:
+  app-network:
